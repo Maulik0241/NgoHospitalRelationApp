@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset Password</title>
+    <style>
+        body {
+    background-color: #f1f1f1;
+}
+form {
+    background-color: white;
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+h1 {
+    text-align: center;
+}
+label {
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+}
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    /* width: 80%; */
+}
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+    </style>
+    <script>
+      var status = "<%- JSON.stringify(status)%>";
+      if (JSON.parse(status) == "Verified") {
+        if (confirm("Do you want to login?")) {
+          window.location.href = "http://localhost:3000/";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form action="" method="post">
+      <h1>Reset Password</h1>
+      <center>
+      <label for="password">New Password:</label>
+      <input type="password" name="password" id="password" required />
+      <br />
+      <label for="confirm-password">Confirm Password:</label>
+      <input
+        type="password"
+        name="confirm-password"
+        id="confirm-password"
+        required
+      />
+    </center>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
